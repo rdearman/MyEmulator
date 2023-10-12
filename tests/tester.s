@@ -1,0 +1,2 @@
+li r0, #0x20
+jmp #0xFF

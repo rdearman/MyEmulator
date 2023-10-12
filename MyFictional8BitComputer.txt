@@ -1,0 +1,62 @@
+CPU:
+    8-bit CPU with 4 general-use registers (R0-R3), SP (Stack Pointer), and PC (Program Counter).
+    16-bit address bus for memory access.
+    8-bit data bus for data transfer.
+
+Memory:
+    RAM:
+        Bank 1: 256KB of RAM with an 8-bit address bus.
+        Bank 2: 256KB of RAM with an 8-bit address bus.
+        Bank 3: 256KB of RAM with an 8-bit address bus.
+    EPROM:
+        Bank 0: 256MB of EPROM with an 8-bit address bus containing boot code and initial instructions.
+
+Boot Sequence: On startup, the computer performs the following steps:
+    Initializes the hardware components.
+    Loads the initial boot code and instructions from EPROM.
+    Executes the boot code from EPROM to initialize the system.
+    Simulates a hard drive as a folder on the host machine for file storage and access.
+
+Storage Management: Implement a storage management system to interact with the simulated hard drive folder, including read, write, and file management operations. Define the file system format and access methods suitable for your computer's architecture.
+
+Serial Output Interface: The computer features a serial output interface for communicating with external devices or for user interaction. Specify the baud rate, data format (e.g., 8N1), and any control signals (e.g., RTS/CTS) as needed.
+
+Instruction Set:
+    Load (LD):                  Opcode: 0000 : Description: Load data from memory into a register.
+    Load Immediate (LI):        Opcode: 0001 : Description: Load an immediate value into a register.
+    Store (ST):                 Opcode: 0010 : Description: Store data from a register into memory.
+    Add (ADD):                  Opcode: 0011 : Description: Add two registers and store the result in a destination register.
+    Subtract (SUB):             Opcode: 0100 : Description: Subtract one register from another and store the result in a destination register.
+    Jump (JMP):                 Opcode: 0101 : Description: Unconditional jump to a target address.
+    Branch if Equal (BEQ):      Opcode: 0110 : Description: Branch to a target address if two registers are equal.
+    Branch if Not Equal (BNE):  Opcode: 0111 : Description: Branch to a target address if two registers are not equal.
+    Compare (CMP):              Opcode: 1000 : Description: Compare two registers and set flags based on the result.
+    Logical AND (AND):          Opcode: 1001 : Description: Perform a bitwise AND operation between two registers and store the result in a destination register.
+    Logical OR (OR):            Opcode: 1010 : Description: Perform a bitwise OR operation between two registers and store the result in a destination register.
+    Logical XOR (XOR):          Opcode: 1011 : Description: Perform a bitwise XOR operation between two registers and store the result in a destination register.
+    Shift Left (SHL):           Opcode: 1100 : Description: Shift the bits in a register to the left.
+    Shift Right (SHR):          Opcode: 1101 : Description: Shift the bits in a register to the right.
+    Push (PUSH):                Opcode: 1110 : Description: Push a value from a register onto the stack.
+    Pop (POP):                  Opcode: 1111 : Description: Pop a value from the stack into a register.
+
+
+Flags:
+Zero Flag (ZF): Set if the result of an operation is zero.
+Overflow Flag (OF): Set if an overflow occurs during an arithmetic operation.
+Carry Flag (CF): Set if there is a carry or borrow during an arithmetic operation.
+
+
+END_MARKER_ADDRESS = 0xFFFF  # Define an address as the end marker
+; Your program instructions here
+
+; Jump to the predefined end marker
+JMP HALT
+
+; Other instructions in your program
+
+; Define the end marker
+HALT:    ; Label for the end marker
+
+; Additional instructions (if needed) after the end marker
+
+

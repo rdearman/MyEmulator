@@ -1,0 +1,10 @@
+2023-10-04 21:34:18,483 [INFO]: Passing Operands: ['{IRC}']
+2023-10-04 21:34:18,483 [INFO]: 	Inside Process Group 2 Opcode: pop
+2023-10-04 21:34:18,483 [INFO]: 	Passed Operands: ['{IRC}']
+2023-10-04 21:34:18,483 [INFO]: 	Opcode Binary: 1111
+2023-10-04 21:34:18,483 [INFO]: machine_instruction 0000: 1111000010000000
+2023-10-04 21:34:18,483 [INFO]: Passing Operands: ['#0xFF']
+2023-10-04 21:34:18,483 [INFO]: 	Inside Process Group 2 Opcode: jmp
+2023-10-04 21:34:18,483 [INFO]: 	Passed Operands: ['#0xFF']
+2023-10-04 21:34:18,483 [INFO]: 	Opcode Binary: 0101
+2023-10-04 21:34:18,483 [INFO]: machine_instruction 0001: 0101000011111111

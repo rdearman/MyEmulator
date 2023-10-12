@@ -1,0 +1,6 @@
+2023-10-04 22:44:33,219 [INFO]: fetch_and_execute() PC = 0x0000
+2023-10-04 22:44:33,219 [INFO]: fetch_and_execute() Read instruction from memory address 0x0000: instruction: 0xFF81
+2023-10-04 22:44:33,219 [INFO]: fetch_and_execute() Opcode: 1111, Operands: 000010000001
+2023-10-04 22:44:33,219 [INFO]: fetch_and_execute() Rd: 0011, Rn: 0011
+2023-10-04 22:44:33,219 [INFO]: execute_instruction: (15, 3, 3, 129)
+2023-10-04 22:44:33,219 [INFO]: Inside POP

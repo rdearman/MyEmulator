@@ -1,0 +1,102 @@
+Here is the documentation and usage for all 16 instructions:
+
+1. ld (Load Data)
+
+    Opcode: 0000
+    Description: Load data from memory into a register. Load the data from the memory location pointed to by the address in 'Rn' and place it into register 'Rd
+    Usage: ld Rd, [Rn]
+    ld R2, [R3] ; In this example, the data from the memory location specified by the address in "R3" would be loaded into "R2."
+
+2. li (Load Immediate)
+
+    Opcode: 0001
+    Description: Load an immediate value into a register. 
+    Usage: li Rd, #imm
+    
+3. st (Store Data)
+
+    Opcode: 0010
+    Description: Store data from a register into memory. Store the data from register 'Rd' into the memory location pointed to by the address in 'Rn
+    Usage: st Rd, [Rn]
+    st R0, [R1] ; In this example, the contents of register "R0" would be stored into the memory location specified by the address stored in "R1."
+
+4. add (Add)
+
+    Opcode: 0011
+    Description: Add two values and store the result in a register.
+    Usage: add Rd, Rn, Rm
+
+5. sub (Subtract)
+
+    Opcode: 0100
+    Description: Subtract two values and store the result in a register.
+    Usage: sub Rd, Rn, Rm
+
+6. jmp (Jump)
+
+    Opcode: 0101
+    Description: Unconditional jump to a specified address.
+    Usage: jmp #addr
+    Usage: jmp label
+
+7. beq (Branch if Equal)
+
+    Opcode: 0110
+    Description: Branch to a specified address if two registers are equal.
+    Usage: beq label
+
+    For conditional branches like BNE and BEQ, you typically don't need to save the return address in the LR register, as these instructions are used to change the flow of execution based on the condition (e.g., zero flag) without necessarily calling a subroutine. You should be able to directly handle the branching based on the condition without affecting the LR register.
+
+8. bne (Branch if Not Equal)
+
+    Opcode: 0111
+    Description: Branch to a specified address if two registers are not equal.
+    Usage: bne label
+
+9. cmp (Compare)
+
+    Opcode: 1000
+    Description: Compare two values and update flags.
+    Usage: cmp Rn, Rm
+
+10. and (Logical AND)
+
+    Opcode: 1001
+    Description: Perform a bitwise AND operation between two values.
+    Usage: and Rd, Rn, Rm
+
+11. or (Logical OR)
+
+    Opcode: 1010
+    Description: Perform a bitwise OR operation between two values.
+    Usage: or Rd, Rn, Rm
+
+12. xor (Logical XOR)
+
+    Opcode: 1011
+    Description: Perform a bitwise XOR operation between two values.
+    Usage: xor Rd, Rn, Rm
+
+13. shl (Shift Left)
+
+    Opcode: 1100
+    Description: Shift a value left by a specified number of bits.
+    Usage: shl Rd, Rn, #imm
+
+14. shr (Shift Right)
+
+    Opcode: 1101
+    Description: Shift a value right by a specified number of bits.
+    Usage: shr Rd, Rn, #imm
+
+15. push (Push)
+
+    Opcode: 1110
+    Description: Push registers R0-R3 and LR onto the stack.
+    Usage: push {R0, R1, R2, R3, LR}
+
+16. pop (Pop)
+
+    Opcode: 1111
+    Description: Pop registers R0-R3 and LR from the stack.
+    Usage: pop {R0, R1, R2, R3, LR}
